@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Server Status</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 { color: #333; border-bottom: 3px solid #4CAF50; padding-bottom: 10px; }
+        h2 { color: #555; margin-top: 30px; }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) { background: #f9f9f9; }
+        .metric {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .log-box {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .nav {
+            background: #333;
+            overflow: hidden;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .nav a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            background: #4CAF50;
+        }
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .badge-success { background: #4CAF50; color: white; }
+        .badge-warning { background: #ff9800; color: white; }
+        .badge-error { background: #f44336; color: white; }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #888;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/status">Status</a>
+    </div>
+    
+    <h1>ð Web Server Status Dashboard</h1>
+    
+    <div class="card">
+        <h2>ð Server Metrics</h2>
+        <table>
+            <tr><th>Metric</th><th>Value</th></tr>
+            <tr><td>Server Uptime</td><td class="metric">0h 0m 6s</td></tr>
+            <tr><td>Active Threads</td><td class="metric">1</td></tr>
+            <tr><td>Total Requests Processed</td><td class="metric">1</td></tr>
+            <tr><td>Port</td><td>8848</td></tr>
+            <tr><td>Document Root</td><td>c:\Users\LENOVO\Desktop\network_project\webs</td></tr>
+            <tr><td>Log File</td><td>c:\Users\LENOVO\Desktop\network_project\logs\server.log</td></tr>
+        </table>
+    </div>
+    
+    <div class="card">
+        <h2>ð Status Code Distribution</h2>
+        <table>
+            <tr><th>Status Code</th><th>Count</th></tr>
+            <tr><td>200</td><td>153</td></table>
+<tr><td>304</td><td>4</td></table>
+<tr><td>400</td><td>7</td></table>
+<tr><td>403</td><td>12</td></table>
+<tr><td>404</td><td>26</td></table>
+
+        </table>
+    </div>
+    
+    <div class="card">
+        <h2>ð Recent Logs (Last 10 lines)</h2>
+        <div class="log-box">127.0.0.1 | 2026-04-20 22:07:42 | UNKNOWN UNKNOWN | 400
+127.0.0.1 | 2026-04-20 22:07:42 | GET /index.html | 200
+127.0.0.1 | 2026-04-20 22:07:42 | GET /index.html | 304
+127.0.0.1 | 2026-04-20 22:07:42 | GET /index.html | 200
+127.0.0.1 | 2026-04-20 22:07:42 | GET /index.html | 200
+127.0.0.1 | 2026-04-20 22:07:42 | GET /index.html | 200
+127.0.0.1 | 2026-04-20 22:07:42 | GET /index.html | 200
+127.0.0.1 | 2026-04-20 22:07:42 | GET /index.html | 200
+127.0.0.1 | 2026-04-20 22:07:42 | GET /index.html | 200
+127.0.0.1 | 2026-04-20 22:07:42 | GET /status | 200
+</div>
+    </div>
+    
+    <div class="card">
+        <h2>ð§ Supported Features</h2>
+        </table>
+            <tr><th>Feature</th><th>Status</th></tr>
+            <tr><td>Multi-threading</td><td><span class="badge badge-success">â Enabled</span></td></tr>
+            <tr><td>GET Method</td><td><span class="badge badge-success">â Supported</span></td></tr>
+            <tr><td>HEAD Method</td><td><span class="badge badge-success">â Supported</span></td></tr>
+            <tr><td>Keep-Alive Connections</td><td><span class="badge badge-success">â Supported</span></td></tr>
+            <tr><td>Last-Modified / 304</td><td><span class="badge badge-success">â Supported</span></td></tr>
+            <tr><td>Path Traversal Protection</td><td><span class="badge badge-success">â Enabled</span></td></tr>
+            <tr><td>Logging</td><td><span class="badge badge-success">â Enabled</span></td></tr>
+        </table>
+    </div>
+    
+    <div class="footer">
+        <p>Multi-Thread Web Server | Built for Comp 2322 Computer Networking</p>
+        <p>Current Time: 2026-04-20 22:08:23</p>
+    </div>
+</body>
+</html>
+    
